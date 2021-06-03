@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>Laravel 5.8 Ajax CRUD Application - 
+DevOpsSchool.com </title>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+ <style>
+   /* .container{
+    padding: 0.5%;
+   }  */
+   .top_nav ul li a {
+    color: black;
+    font-size: .9rem;
+    margin-left: -9px;
+    padding-right: 11px;
+    margin-top: -3px;
+}
+.top_nav ul li a:hover {
+    text-decoration: underline;
+}
+.top_nav .btn {
+    color: #fff !important;
+    padding: 7px 24px;
+    font-size: 14px;
+}
+.top_nav ul {
+    margin-right: -11px;
+    margin-top: -4px;
+}
+.top_nav img {
+    padding-right: 20px;
+    height: 33px;
+}
+
+.content input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('search.png');
+  background-position: 19px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+    width: 60%;
+    height: 50px;
+    border-radius: 50px;
+}
+.content {
+    padding-top: 11rem;
+    padding-left: 24rem;
+}
+.content img{
+    margin-left: -43px;
+    height: 33px;
+    margin-top: 9px;
+}
+/* .butons .btn-secondary{
+    background: #ffff !important;
+    color: #333;
+    border-color: #fff;
+}
+.butons .btn-secondary:hover{
+    border-color: #333;
+   
+} */
+button.btn.btn-secondary {
+    background: #ffff;
+    color: #333;
+    border-color: #fff;
+    margin-right: 10px;
+}
+button.btn.btn-secondary:hover {
+    /* border-color: #333; */
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+    
+}
+.buttons {
+    padding-left: 33.7rem;
+    padding-top: 1.25rem;
+}
+.historical{
+    padding-left: 34rem;
+    margin-bottom: -159px;
+}
+.historical .big_img{
+    width: 34%;
+}
+.historical .small_img{
+    width: 22px;
+    height: 22px;
+}
+.language_links {
+    font-size: 13px;
+    margin-left: 417px;
+    margin-top: 29px;
+}
+.language_links a {
+    margin-left: 11px;
+    color: #1a0dab;
+}
+
+/* ===================== */
+.right_footer {
+    margin-left: 1083px;
+}
+.footer1 {
+    height: 50px;
+    margin-top: 262px;
+    border-top: 1px solid #dadce0;
+}
+
+.footer1 a {
+    color: #70757a;
+    font-size: 14px;
+
+}
+.left_footer1 a {
+    margin-left: 19px;
+    font-size: 15px;
+}
+.right_footer1 a {
+    padding-right: 22px;
+    font-size: 15px;
+}
+.left_footer {
+    margin-left: 19px;
+    margin-top: 15px;
+}
+.right_footer {
+    margin-left: 1113px;
+}
+.right_footer1 {
+    text-align: end;
+}
+.upspace {
+    padding-top: 11px;
+}
+.india {
+    margin-top: -38px;
+    margin-left: 31px;
+    color: #70757a;
+}
+
+</style>
+</head>
+<body>
+<div class="top_nav">
+  <div class="container-fluid">
+      <!-- <div class="row"> -->
+            
+            <ul class="nav justify-content-end p-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gmail</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Images</a>
+              </li>
+              <li class="nav-item">
+                <img src="dotted_img.png" alt="">
+              </li>
+              <li class="nav-item">
+                 <a href="" class="btn btn-primary">Sign in</a>
+              </li>
+            </ul>
+          
+      <!-- </div> -->
+  </div>
+</div>  
+<div class="historical">
+    <div class="container">
+        <div class="row">
+            <img class="big_img" src="googlelogo_color_272x92dp.png" alt="">
+            <!-- <img class="small_img" src="share.png" alt=""> -->
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <!-- <input type="search" name="" id=""> -->
+            <input type="text" name="search" >
+            <img src="mic_google_img.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="buttons">
+    <div class="container">
+        <div class="row">
+            <button class="btn btn-secondary">Google Search</button>
+            <button class="btn btn-secondary">I'm Feeling Lucky</button>
+        </div>
+    </div>
+</div>
+<div class="language_links">
+    <div class="container">
+        <div class="row">
+            <p>Google offered in:</p>
+            <a href="">हिन्दी</a>
+            <a href="">বাংলা</a>
+            <a href="">తెలుగు</a>
+            <a href="">मराठी</a>
+            <a href="">தமிழ்</a>
+            <a href="">ગુજરાતી</a>
+            <a href="">ಕನ್ನಡ</a>
+            <a href="">മലയാളം</a>
+            <a href="">ਪੰਜਾਬੀ</a>
+        </div>
+    </div>
+</div>
+<!-- <div class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="left_footer">
+                <a href="">About</a>
+                <a href="">Advertising</a>
+                <a href="">Business</a>
+                <a href="">How Search Works</a>
+            </div>
+            <div class="right_footer">
+                <a href="">Privacy</a>
+                <a href="">Terms</a>
+                <a href="">Settings</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="footer1">
+    <div class="india">
+        <p>India</p>
+     </div>
+    <div class="container-fluid upspace">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="left_footer1">
+                    <a href="">About</a>
+                    <a href="">Advertising</a>
+                    <a href="">Business</a>
+                    <a href="">How Search Works</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right_footer1">
+                    <a href="">Privacy</a>
+                    <a href="">Terms</a>
+                    <a href="">Settings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
